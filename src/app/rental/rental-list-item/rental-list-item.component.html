@@ -1,0 +1,13 @@
+<a routerLink="/rentals/{{item.id}}">
+	<div class="card bwm-card">
+		<img class="card-img-top"
+			src="http://via.placeholder.com/350x250" alt="">
+		<div class="card-block">
+			<h6 class="card-subtitle">
+				Whole {{ item.category }} &#183; {{ item.city }}</h6>
+			<h4 class="card-title">{{ item.title }}</h4>
+			<p class="card-text">
+				${{ item.dailyRate }} per Night &#183; Free Cancelation</p>
+		</div>
+	</div>
+</a>
