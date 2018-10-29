@@ -17,7 +17,7 @@ class FakeDb {
 			{
 			title: "Modern apartment in center",
 			city: "New York",
-			street: "Time Square",
+			street: "1211 Avenue of the Americas",
 			category: "apartment",
 			image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
 			bedrooms: 1,
