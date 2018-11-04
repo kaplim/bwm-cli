@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'bwm-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(private router: Router, private auth: AuthService) { }
 
-  ngOnInit() {
+  logout() {
+  	this.auth.logout();
+  	this.router.navigate(['/login']);
   }
 
+  isAuthenticated() {
+  	return this.auth.isAuthenticated();
+  }
 }
