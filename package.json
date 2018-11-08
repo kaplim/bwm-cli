@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
-    "@angular/animations": "~7.0.0",
+    "@angular/animations": "^7.0.3",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@auth0/angular-jwt": "^2.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@types/googlemaps": "^3.30.16",
     "@types/jquery": "^3.3.22",
     "bcrypt": "^3.0.2",
@@ -36,6 +37,7 @@
     "mongoose": "^5.3.7",
     "ng2-daterangepicker": "^2.0.12",
     "ngx-pipes": "^2.3.6",
+    "ngx-toastr": "^9.1.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
