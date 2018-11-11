@@ -10,7 +10,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-	formData: any = {}
+	formData: any = {};
 	errors: any[] = [];
 
 	constructor(private auth: AuthService,

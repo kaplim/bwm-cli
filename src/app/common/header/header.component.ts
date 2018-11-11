@@ -20,4 +20,9 @@ export class HeaderComponent {
   isAuthenticated() {
   	return this.auth.isAuthenticated();
   }
+
+  search(city: string) {
+    city.trim() ? this.router.navigate([`/rentals/${city}/homes`]) :
+      this.router.navigate(['/rentals']);
+  }
 }

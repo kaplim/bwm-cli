@@ -9,6 +9,7 @@ import { Rental } from '../../shared/rental.model';
 import { Booking } from '../../../booking/shared/booking.model';
 import { HelperService } from '../../../common/service/helper.service';
 import { BookingService } from '../../../booking/shared/booking.service';
+import { AuthService } from '../../../auth/shared/auth.service';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -41,7 +42,8 @@ export class RentalDetailBookingComponent implements OnInit {
 	constructor(private helper: HelperService,
         private modalService: NgbModal,
         private bookingService: BookingService,
-        private toastr: ToastrService) { }
+        private toastr: ToastrService,
+        private auth: AuthService) { }
     
     ngOnInit() {
         this.newBooking = new Booking();
@@ -113,5 +115,9 @@ export class RentalDetailBookingComponent implements OnInit {
         this.newBooking.days = value.end.diff(value.start, 'days');
         this.newBooking.totalPrice =
             this.newBooking.days * this.rental.dailyRate;
+    }
+
+    isAuthenticated() {
+        return this.auth.isAuthenticated();
     }
 }
