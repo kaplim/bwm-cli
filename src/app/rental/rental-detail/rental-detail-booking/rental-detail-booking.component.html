@@ -3,24 +3,31 @@
 		<span class="booking-per-night">per night</span>
 	</h3>
 	<hr>
-	<form #bf="ngForm">
-		<label>Dates</label>
-		<input type="text" class="form-control daterangepicker-input"
-			name="daterangeInput" daterangepicker
-			[options]="options" (selected)="selectedDate($event, daterange)"/>
-		<div class="form-group">
-			<label for="guests">Guests</label>
-			<input [(ngModel)]="newBooking.guests" name="guests"
-				type="number" class="form-control" id="guests"
-				aria-describedby="emailHelp" required>
-		</div>
-	</form>
-	<button class="btn btn-danger btn-confirm btn-block"
-		(click)="reserveConfirm(content)"
-		[disabled]="!bf.form.valid || !newBooking.startAt || !newBooking.endAt">
-		Reserve place now
-	</button>
-	<hr>
+	<ng-container *ngIf="isAuthenticated()">
+		<form #bf="ngForm">
+			<label>Dates</label>
+			<input type="text" class="form-control daterangepicker-input"
+				name="daterangeInput" daterangepicker
+				[options]="options" (selected)="selectedDate($event, daterange)"/>
+			<div class="form-group">
+				<label for="guests">Guests</label>
+				<input [(ngModel)]="newBooking.guests" name="guests"
+					type="number" class="form-control" id="guests"
+					aria-describedby="emailHelp" required>
+			</div>
+		</form>
+		<button class="btn btn-danger btn-confirm btn-block"
+			(click)="reserveConfirm(content)"
+			[disabled]="!bf.form.valid || !newBooking.startAt || !newBooking.endAt">
+			Reserve place now
+		</button>
+		<hr>
+	</ng-container>
+	<div *ngIf="!isAuthenticated()" class="should-login">
+		<a class="btn btn-bwm" routerLink="/login">
+			Login and book this place today
+		</a>
+	</div>
 	<p class="booking-note-title">People are interested into this house</p>
 	<p class="booking-note-text">
 		More than 500 people checked this rental in last month.
