@@ -11,4 +11,8 @@ export class BookingService {
 	public createBooking(booking: Booking): Observable<Booking> {
 		return this.http.post<Booking>('/api/v1/bookings', booking);
 	}
+
+	public getUserBookings(): Observable<Booking[]> {
+		return this.http.get<Booking[]>('/api/v1/bookings/manage');
+	}
 }
