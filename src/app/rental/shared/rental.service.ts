@@ -35,4 +35,12 @@ export class RentalService {
 	public deleteRental(rentalId: string): Observable<any> {
 		return this.http.delete(`/api/v1/rentals/${rentalId}`);
 	}
+
+	public updateRental(rentalId: string, rentalData: any): Observable<Rental> {
+		return this.http.patch<Rental>(`/api/v1/rentals/${rentalId}`, rentalData);
+	}
+
+	public verifyRentalUser(rentalId: string): Observable<boolean> {
+		return this.http.get<boolean>(`/api/v1/rentals/${rentalId}/verify-user`);
+	}
 }

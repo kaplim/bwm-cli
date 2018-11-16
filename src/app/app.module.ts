@@ -16,7 +16,7 @@ import { ManageModule } from './manage/manage.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
