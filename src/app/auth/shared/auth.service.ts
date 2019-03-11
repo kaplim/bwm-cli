@@ -57,6 +57,10 @@ export class AuthService {
 		return this.decodedToken.username;
 	}
 
+	public getUserId() {
+		return this.decodedToken.userId;
+	}
+
 	public isAuthenticated(): boolean {
 		return moment().isBefore(this.getExpiration());
 	}
